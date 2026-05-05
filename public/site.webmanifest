@@ -1,0 +1,92 @@
+{
+    "name": "Program Magister Teknik Sipil Universitas Mulawarman",
+    "short_name": "Teknik Sipil S2 UNMUL",
+    "description": "Program Magister Teknik Sipil Universitas Mulawarman (UNMUL) Samarinda - Pendidikan pascasarjana terbaik dengan fokus infrastruktur, struktur, dan teknologi konstruksi modern",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "background_color": "#ffffff",
+    "theme_color": "#FF6600",
+    "categories": ["education", "university", "engineering"],
+    "lang": "id",
+    "dir": "ltr",
+    "icons": [
+        {
+            "src": "/assets/images/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/assets/images/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/assets/images/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/assets/images/screenshot-wide.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "/assets/images/screenshot-narrow.png",
+            "sizes": "750x1334",
+            "type": "image/png",
+            "form_factor": "narrow"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Pendaftaran",
+            "short_name": "Daftar",
+            "description": "Pendaftaran Mahasiswa Baru",
+            "url": "/pendaftaran",
+            "icons": [
+                {
+                    "src": "/assets/images/shortcut-register.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Informasi",
+            "short_name": "Info",
+            "description": "Informasi Program",
+            "url": "/informasi",
+            "icons": [
+                {
+                    "src": "/assets/images/shortcut-info.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Kontak",
+            "short_name": "Hubungi",
+            "description": "Hubungi Kami",
+            "url": "/kontak",
+            "icons": [
+                {
+                    "src": "/assets/images/shortcut-contact.png",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ],
+    "related_applications": [
+        {
+            "platform": "play",
+            "url": "https://play.google.com/store/apps/details?id=com.unmul.teksipil"
+        }
+    ],
+    "prefer_related_applications": false
+}

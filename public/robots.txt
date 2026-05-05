@@ -1,0 +1,52 @@
+# robots.txt untuk Program Magister Teknik Sipil S2 UNMUL
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://magister.ts.ft.unmul.ac.id/sitemap.xml
+Sitemap: https://magister.ts.ft.unmul.ac.id/sitemap-images.xml
+
+# Block admin area
+Disallow: /admin/
+Disallow: /admin-panel/
+Disallow: /administrator/
+
+# Block vendor and system files
+Disallow: /vendor/
+Disallow: /storage/
+Disallow: /bootstrap/
+Disallow: /config/
+
+# Block sensitive files
+Disallow: /*.json$
+Disallow: /*.env$
+Disallow: /*.sql$
+Disallow: /*.log$
+
+# Block search and filter pages (prevent duplicate content)
+Disallow: /*?*search=
+Disallow: /*?*filter=
+Disallow: /*?*sort=
+
+# Block tracking and internal pages
+Disallow: /tracking/
+Disallow: /test/
+Disallow: /debug/
+
+# Crawl-delay for aggressive bots (optional)
+# User-agent: Baiduspider
+# Crawl-delay: 10
+
+# User-agent: Yandex
+# Crawl-delay: 5
+
+# Allow specific files
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+Allow: /assets/fonts/
+
+# Host (optional - untuk konsolidasi domain)
+# Host: https://magister.ts.ft.unmul.ac.id
