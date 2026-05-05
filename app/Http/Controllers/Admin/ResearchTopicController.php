@@ -40,7 +40,7 @@ class ResearchTopicController extends Controller
         ]);
 
         // slug otomatis kalau kosong
-        $data['slug'] = $data['slug'] ?: Str::slug($data['title']);
+        $data['slug'] = filled($data['slug'] ?? null) ? $data['slug'] : Str::slug($data['title']);
 
         // simpan file (jika ada)
         if ($request->hasFile('image')) {
@@ -101,7 +101,7 @@ class ResearchTopicController extends Controller
         ]);
 
         $topic->title = $data['title'];
-        $topic->slug = $data['slug'] ?: Str::slug($data['title']);
+        $topic->slug = filled($data['slug'] ?? null) ? $data['slug'] : Str::slug($data['title']);
         $topic->research_section_id = $data['research_section_id'];
         $topic->description = $data['description'] ?? null;
         $topic->icon_class = $data['icon_class'] ?? null;

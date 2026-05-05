@@ -50,9 +50,9 @@ class TeacherController extends Controller
             'is_active' => ['required', 'boolean'],
         ]);
 
-        $data['slug'] = $data['slug'] ?: Str::slug($data['name']);
-        $data['col_classes'] = $data['col_classes'] ?: 'col-xl-3 col-lg-6 col-md-6';
-        $data['wow_animation_class'] = $data['wow_animation_class'] ?: 'wow fadeInUp';
+        $data['slug'] = filled($data['slug'] ?? null) ? $data['slug'] : Str::slug($data['name']);
+        $data['col_classes'] = filled($data['col_classes'] ?? null) ? $data['col_classes'] : 'col-xl-3 col-lg-6 col-md-6';
+        $data['wow_animation_class'] = filled($data['wow_animation_class'] ?? null) ? $data['wow_animation_class'] : 'wow fadeInUp';
         $data['animation_delay_ms'] = $data['animation_delay_ms'] ?? 100;
         $data['animation_duration_ms'] = $data['animation_duration_ms'] ?? 1500;
 
@@ -120,7 +120,7 @@ class TeacherController extends Controller
 
         $teacher->teacher_section_id = $data['teacher_section_id'];
         $teacher->name = $data['name'];
-        $teacher->slug = $data['slug'] ?: Str::slug($data['name']);
+        $teacher->slug = filled($data['slug'] ?? null) ? $data['slug'] : Str::slug($data['name']);
         $teacher->tagline = $data['tagline'] ?? null;
 
         // foto
@@ -140,8 +140,8 @@ class TeacherController extends Controller
         $teacher->scholar_url = $data['scholar_url'] ?? null;
         $teacher->website_url = $data['website_url'] ?? null;
 
-        $teacher->col_classes = $data['col_classes'] ?: 'col-xl-3 col-lg-6 col-md-6';
-        $teacher->wow_animation_class = $data['wow_animation_class'] ?: 'wow fadeInUp';
+        $teacher->col_classes = filled($data['col_classes'] ?? null) ? $data['col_classes'] : 'col-xl-3 col-lg-6 col-md-6';
+        $teacher->wow_animation_class = filled($data['wow_animation_class'] ?? null) ? $data['wow_animation_class'] : 'wow fadeInUp';
         $teacher->animation_delay_ms = $data['animation_delay_ms'] ?? 100;
         $teacher->animation_duration_ms = $data['animation_duration_ms'] ?? 1500;
 

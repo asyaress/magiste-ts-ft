@@ -43,8 +43,8 @@ class GalleryItemController extends Controller
             'is_active' => ['required', 'boolean'],
         ]);
 
-        $data['slug'] = $data['slug'] ?: Str::slug($data['title']);
-        $data['col_classes'] = $data['col_classes'] ?: 'col-xl-4 col-lg-6 col-md-6';
+        $data['slug'] = filled($data['slug'] ?? null) ? $data['slug'] : Str::slug($data['title']);
+        $data['col_classes'] = filled($data['col_classes'] ?? null) ? $data['col_classes'] : 'col-xl-4 col-lg-6 col-md-6';
 
         // upload image utama
         $imagePath = $request->file('image')->store('gallery/items', 'public');
@@ -107,11 +107,11 @@ class GalleryItemController extends Controller
 
         $item->gallery_section_id = $data['gallery_section_id'];
         $item->title = $data['title'];
-        $item->slug = $data['slug'] ?: Str::slug($data['title']);
+        $item->slug = filled($data['slug'] ?? null) ? $data['slug'] : Str::slug($data['title']);
         $item->category_label = $data['category_label'] ?? null;
         $item->icon_class = $data['icon_class'] ?? null;
         $item->icon_color_class = $data['icon_color_class'] ?? null;
-        $item->col_classes = $data['col_classes'] ?: 'col-xl-4 col-lg-6 col-md-6';
+        $item->col_classes = filled($data['col_classes'] ?? null) ? $data['col_classes'] : 'col-xl-4 col-lg-6 col-md-6';
         $item->image_alt = $data['image_alt'] ?? null;
         $item->sort_order = $data['sort_order'];
         $item->is_active = (bool) $data['is_active'];

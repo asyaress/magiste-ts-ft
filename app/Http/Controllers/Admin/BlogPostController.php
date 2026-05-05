@@ -49,8 +49,8 @@ class BlogPostController extends Controller
             'sort_order' => ['nullable', 'integer', 'min:0'],
         ]);
 
-        $data['slug'] = $data['slug'] ?: Str::slug($data['title']);
-        $data['overlay_icon_class'] = $data['overlay_icon_class'] ?: 'flaticon-plus';
+        $data['slug'] = filled($data['slug'] ?? null) ? $data['slug'] : Str::slug($data['title']);
+        $data['overlay_icon_class'] = filled($data['overlay_icon_class'] ?? null) ? $data['overlay_icon_class'] : 'flaticon-plus';
         $data['animation_duration_ms'] = $data['animation_duration_ms'] ?? 1500;
         $data['sort_order'] = $data['sort_order'] ?? 0;
 
@@ -112,7 +112,7 @@ class BlogPostController extends Controller
 
         $post->blog_section_id = $data['blog_section_id'];
         $post->title = $data['title'];
-        $post->slug = $data['slug'] ?: Str::slug($data['title']);
+        $post->slug = filled($data['slug'] ?? null) ? $data['slug'] : Str::slug($data['title']);
         $post->excerpt = $data['excerpt'] ?? null;
         $post->body = $data['body'] ?? null;
 
@@ -127,7 +127,7 @@ class BlogPostController extends Controller
         }
 
         $post->image_alt = $data['image_alt'] ?? null;
-        $post->overlay_icon_class = $data['overlay_icon_class'] ?: 'flaticon-plus';
+        $post->overlay_icon_class = filled($data['overlay_icon_class'] ?? null) ? $data['overlay_icon_class'] : 'flaticon-plus';
 
         $post->author_name = $data['author_name'] ?? null;
         $post->comment_count = $data['comment_count'] ?? 0;
