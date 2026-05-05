@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="form-group col-md-4">
-        <label>Sort Order</label>
+        <label>Urutan Tampil</label>
         <input type="number" name="sort_order" class="form-control" min="0"
             value="{{ old('sort_order', $item->sort_order ?? 0) }}" required>
     </div>

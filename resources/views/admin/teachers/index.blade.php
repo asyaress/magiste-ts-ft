@@ -123,35 +123,9 @@
                                     value="{{ old('website_url') }}">
                             </div>
 
-                            <div class="form-group">
-                                <label>Grid Classes</label>
-                                <input type="text" name="col_classes" class="form-control"
-                                    value="{{ old('col_classes', 'col-xl-3 col-lg-6 col-md-6') }}">
-                            </div>
-
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label>WOW Animation Class</label>
-                                    <input type="text" name="wow_animation_class" class="form-control"
-                                        value="{{ old('wow_animation_class', 'wow fadeInUp') }}">
-                                    <small class="text-muted">Contoh: <code>wow fadeInUp</code>,
-                                        <code>wow fadeInDown</code></small>
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label>Delay (ms)</label>
-                                    <input type="number" name="animation_delay_ms" class="form-control"
-                                        value="{{ old('animation_delay_ms', 100) }}" min="0">
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label>Duration (ms)</label>
-                                    <input type="number" name="animation_duration_ms" class="form-control"
-                                        value="{{ old('animation_duration_ms', 1500) }}" min="0">
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label>Sort Order</label>
+                                    <label>Urutan Tampil</label>
                                     <input type="number" name="sort_order" class="form-control"
                                         value="{{ old('sort_order', 0) }}" min="0" required>
                                 </div>

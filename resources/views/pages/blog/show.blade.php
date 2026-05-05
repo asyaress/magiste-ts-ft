@@ -1,19 +1,30 @@
 @extends('layouts.app')
 
-@section('title', $post->title . ' | Magister Teknik Sipil UNMUL')
+@section('title', $post->title . ' | Magister Teknik Sipil Unmul')
 
 @section('content')
-    <section class="breadcrumb-area">
+    <section class="breadcrumb-area"
+        style="background-image: url({{ asset('assets/images/breadcrumb/breadcrumb-1.jpg') }});">
         <div class="container">
             <div class="row">
-                <div class="col-12 py-4">
-                    <h2 class="mb-2">{{ $post->title }}</h2>
-                    <p class="mb-0 text-muted">
-                        {{ optional($post->published_at)->format('d M Y H:i') }}
-                        @if($post->author_name)
-                            | {{ $post->author_name }}
-                        @endif
-                    </p>
+                <div class="col-xl-12">
+                    <div class="inner-content">
+                        <div class="title mt-20">
+                            <h2>{{ $post->title }}</h2>
+                        </div>
+                        <div class="breadcrumb-menu">
+                            <ul>
+                                <li><a href="{{ url('/') }}">Home</a></li>
+                                <li><span class="fa fa-angle-right"></span></li>
+                                <li><a href="{{ route('blog.index') }}">Berita</a></li>
+                                <li><span class="fa fa-angle-right"></span></li>
+                                <li class="active">
+                                    Detail
+                                    <i class="flaticon-right-arrow-1 arrow1"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

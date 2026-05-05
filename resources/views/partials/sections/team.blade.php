@@ -1,5 +1,10 @@
 <!--Start Team Style1 Area-->
 <section class="team-style1-area" id="{{ $section->slug }}">
+    @php
+        $teachers = collect($section->teachers ?? []);
+        $previewTeachers = $teachers->take(4);
+    @endphp
+
     <div class="container">
         <div class="sec-title text-center">
             @if($section->subtitle)
@@ -11,7 +16,7 @@
         </div>
 
         <div class="row text-right-rtl">
-            @forelse($section->teachers as $t)
+            @forelse($previewTeachers as $t)
                 <div class="{{ $t->col_classes }} {{ $t->wow_animation_class }}"
                     data-wow-delay="{{ $t->animation_delay_ms }}ms" data-wow-duration="{{ $t->animation_duration_ms }}ms">
                     <div class="single-team-item">
@@ -59,6 +64,16 @@
                 </div>
             @endforelse
         </div>
+
+        @if($teachers->count() > 4)
+            <div class="row">
+                <div class="col-12 text-center mt-4">
+                    <a class="btn-one" href="{{ route('teams.index') }}">
+                        <span class="txt">Lihat Selengkapnya <i class="flaticon-right-arrow-1 arrow1"></i></span>
+                    </a>
+                </div>
+            </div>
+        @endif
     </div>
 </section>
 <!--End Team Style1 Area-->

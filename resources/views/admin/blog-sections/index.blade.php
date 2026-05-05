@@ -1,4 +1,4 @@
-@extends('layout/main')
+﻿@extends('layout/main')
 
 @section('content')
     <div class="content-wrapper">
@@ -82,6 +82,7 @@
                                         </tr>
 
                                         {{-- Modal Edit --}}
+                                        @push('modals')
                                         <div class="modal fade" id="modalEditSection{{ $sec->id }}" tabindex="-1" role="dialog"
                                             aria-hidden="true">
                                             <div class="modal-dialog" role="document">
@@ -121,7 +122,7 @@
                                                         </div>
                                                         <div class="form-row">
                                                             <div class="form-group col-md-6">
-                                                                <label>Sort Order</label>
+                                                                <label>Urutan Tampil</label>
                                                                 <input type="number" name="sort_order" class="form-control"
                                                                     min="0" value="{{ old('sort_order', $sec->sort_order) }}">
                                                             </div>
@@ -142,6 +143,7 @@
                                                 </form>
                                             </div>
                                         </div>
+                                        @endpush
                                     @empty
                                         <tr>
                                             <td colspan="7" class="text-center text-muted">Belum ada section.</td>
@@ -170,15 +172,15 @@
                     <div class="form-group"><label>Slug</label><input type="text" name="slug" class="form-control" required
                             placeholder="blog-latest"></div>
                     <div class="form-group"><label>Title</label><input type="text" name="title" class="form-control"
-                            required value="Letest News"></div>
+                            required value="Berita Terbaru"></div>
                     <div class="form-group"><label>Subtitle</label><input type="text" name="subtitle" class="form-control"
-                            value="The standard chunk of used since the is reproduced below for those."></div>
+                            value="Informasi terbaru seputar kegiatan akademik, riset, dan prestasi Magister Teknik Sipil FT Unmul."></div>
                     <div class="form-group"><label>Button Text</label><input type="text" name="button_text"
-                            class="form-control" value="View All Blog"></div>
+                            class="form-control" value="Lihat Semua Berita"></div>
                     <div class="form-group"><label>Button URL</label><input type="url" name="button_url"
                             class="form-control" placeholder="https://... atau /blog"></div>
                     <div class="form-row">
-                        <div class="form-group col-md-6"><label>Sort Order</label><input type="number" name="sort_order"
+                        <div class="form-group col-md-6"><label>Urutan Tampil</label><input type="number" name="sort_order"
                                 class="form-control" min="0" value="0"></div>
                         <div class="form-group col-md-6">
                             <label>Status</label>

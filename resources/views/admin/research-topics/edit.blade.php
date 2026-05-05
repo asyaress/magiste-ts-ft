@@ -65,23 +65,6 @@
                                             rows="4">{{ old('description', $topic->description) }}</textarea>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label>Icon Class</label>
-                                        <input type="text" name="icon_class" class="form-control"
-                                            value="{{ old('icon_class', $topic->icon_class) }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>BG Color Class</label>
-                                        <input type="text" name="bg_color_class" class="form-control"
-                                            value="{{ old('bg_color_class', $topic->bg_color_class) }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Delay Animasi (ms)</label>
-                                        <input type="number" name="animation_delay_ms" class="form-control"
-                                            value="{{ old('animation_delay_ms', $topic->animation_delay_ms) }}" min="0">
-                                    </div>
                                 </div>
 
                                 {{-- Kolom kanan --}}
@@ -132,7 +115,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Sort Order</label>
+                                        <label>Urutan Tampil</label>
                                         <input type="number" name="sort_order" class="form-control"
                                             value="{{ old('sort_order', $topic->sort_order) }}" min="0" required>
                                     </div>

@@ -9,9 +9,7 @@
                         <th>Judul & Slug</th>
                         <th>Kategori</th>
                         <th>Section</th>
-                        <th>Icon</th>
-                        <th>Grid</th>
-                        <th>Sort</th>
+                        <th>Urutan</th>
                         <th>Status</th>
                         <th style="width:150px;">Aksi</th>
                     </tr>
@@ -36,15 +34,6 @@
                                 {{ optional($it->section)->title }}
                                 <small class="text-muted d-block">({{ optional($it->section)->slug }})</small>
                             </td>
-                            <td>
-                                @if($it->icon_class)
-                                    <span class="{{ $it->icon_class }} {{ $it->icon_color_class }}"></span>
-                                    <small class="d-block text-muted">{{ $it->icon_class }} {{ $it->icon_color_class }}</small>
-                                @else
-                                    <span class="text-muted">-</span>
-                                @endif
-                            </td>
-                            <td><small>{{ $it->col_classes }}</small></td>
                             <td>{{ $it->sort_order }}</td>
                             <td>
                                 @if($it->is_active)
@@ -65,7 +54,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="10" class="text-center text-muted">Belum ada data.</td>
+                            <td colspan="8" class="text-center text-muted">Belum ada data.</td>
                         </tr>
                     @endforelse
                 </tbody>

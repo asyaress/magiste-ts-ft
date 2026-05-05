@@ -10,8 +10,7 @@
                         <th>Tagline</th>
                         <th>Section</th>
                         <th>Links</th>
-                        <th>Animasi</th>
-                        <th>Sort</th>
+                        <th>Urutan</th>
                         <th>Status</th>
                         <th style="width:150px;">Aksi</th>
                     </tr>
@@ -48,11 +47,6 @@
                                     <a href="{{ $t->website_url }}" target="_blank" class="ml-2"><i class="fa fa-globe"></i></a>
                                 @endif
                             </td>
-                            <td>
-                                <small class="d-block">{{ $t->wow_animation_class }}</small>
-                                <small class="text-muted">delay {{ $t->animation_delay_ms }}ms • dur
-                                    {{ $t->animation_duration_ms }}ms</small>
-                            </td>
                             <td>{{ $t->sort_order }}</td>
                             <td>
                                 @if($t->is_active)
@@ -72,7 +66,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="10" class="text-center text-muted">Belum ada data.</td>
+                            <td colspan="9" class="text-center text-muted">Belum ada data.</td>
                         </tr>
                     @endforelse
                 </tbody>

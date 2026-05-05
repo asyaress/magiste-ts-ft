@@ -30,8 +30,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Konten</th>
-                                        <th>Animasi</th>
-                                        <th>Sort</th>
+                                        <th>Urutan</th>
                                         <th>Status</th>
                                         <th style="width:190px;">Aksi</th>
                                     </tr>
@@ -41,13 +40,8 @@
                                         <tr>
                                             <td>{{ $i + 1 }}</td>
                                             <td>
-                                                <div><code>{{ $item->icon_class }}</code></div>
                                                 <div class="font-weight-bold">{{ $item->title }}</div>
                                                 <small class="text-muted">{{ \Illuminate\Support\Str::limit($item->description, 100) }}</small>
-                                            </td>
-                                            <td>
-                                                <div>{{ $item->animation_class }}</div>
-                                                <small class="text-muted">Delay {{ $item->animation_delay_ms }}ms</small>
                                             </td>
                                             <td>{{ $item->sort_order }}</td>
                                             <td>{!! $item->is_active ? '<span class="badge badge-success">Aktif</span>' : '<span class="badge badge-secondary">Nonaktif</span>' !!}</td>
@@ -60,6 +54,7 @@
                                             </td>
                                         </tr>
 
+                                        @push('modals')
                                         <div class="modal fade" id="modalEdit{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <form action="{{ route('admin.home-mission-items.update', $item) }}" method="POST" class="modal-content">
@@ -78,6 +73,7 @@
                                                 </form>
                                             </div>
                                         </div>
+                                        @endpush
                                     @empty
                                         <tr><td colspan="6" class="text-center text-muted">Belum ada item misi.</td></tr>
                                     @endforelse

@@ -8,9 +8,7 @@
                         <th>Judul</th>
                         <th>URL</th>
                         <th>Section</th>
-                        <th>Icon</th>
-                        <th>Delay</th>
-                        <th>Sort</th>
+                        <th>Urutan</th>
                         <th>Status</th>
                         <th style="width:150px;">Aksi</th>
                     </tr>
@@ -29,11 +27,6 @@
                                 {{ optional($it->section)->title }}
                                 <small class="text-muted d-block">({{ optional($it->section)->slug }})</small>
                             </td>
-                            <td class="align-middle">
-                                <span class="{{ $it->play_icon_class }}"></span>
-                                <small class="d-block text-muted">{{ $it->play_icon_class }}</small>
-                            </td>
-                            <td class="align-middle">{{ $it->animation_delay_ms }}ms</td>
                             <td class="align-middle">{{ $it->sort_order }}</td>
                             <td class="align-middle">
                                 @if($it->is_active)
@@ -53,7 +46,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="9" class="text-center text-muted">Belum ada data.</td>
+                            <td colspan="7" class="text-center text-muted">Belum ada data.</td>
                         </tr>
                     @endforelse
                 </tbody>

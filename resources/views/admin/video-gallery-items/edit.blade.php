@@ -62,19 +62,7 @@
                                 {{-- Kolom kanan --}}
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Play Icon Class</label>
-                                        <input type="text" name="play_icon_class" class="form-control"
-                                            value="{{ old('play_icon_class', $item->play_icon_class) }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Delay Animasi (ms)</label>
-                                        <input type="number" name="animation_delay_ms" class="form-control"
-                                            value="{{ old('animation_delay_ms', $item->animation_delay_ms) }}" min="0">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Sort Order</label>
+                                        <label>Urutan Tampil</label>
                                         <input type="number" name="sort_order" class="form-control"
                                             value="{{ old('sort_order', $item->sort_order) }}" min="0" required>
                                     </div>

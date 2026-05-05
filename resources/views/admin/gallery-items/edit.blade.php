@@ -65,17 +65,6 @@
                                             value="{{ old('category_label', $item->category_label) }}">
                                     </div>
 
-                                    <div class="form-group">
-                                        <label>Icon Class</label>
-                                        <input type="text" name="icon_class" class="form-control"
-                                            value="{{ old('icon_class', $item->icon_class) }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Icon Color Class</label>
-                                        <input type="text" name="icon_color_class" class="form-control"
-                                            value="{{ old('icon_color_class', $item->icon_color_class) }}">
-                                    </div>
                                 </div>
 
                                 {{-- Kanan --}}
@@ -134,13 +123,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Grid Classes</label>
-                                        <input type="text" name="col_classes" class="form-control"
-                                            value="{{ old('col_classes', $item->col_classes) }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Sort Order</label>
+                                        <label>Urutan Tampil</label>
                                         <input type="number" name="sort_order" class="form-control"
                                             value="{{ old('sort_order', $item->sort_order) }}" min="0" required>
                                     </div>

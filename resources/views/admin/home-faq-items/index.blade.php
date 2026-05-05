@@ -60,6 +60,7 @@
                                             </td>
                                         </tr>
 
+                                        @push('modals')
                                         <div class="modal fade" id="modalEdit{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">
                                             <div class="modal-dialog modal-lg" role="document">
                                                 <form action="{{ route('admin.home-faq-items.update', $item) }}" method="POST" class="modal-content">
@@ -78,6 +79,7 @@
                                                 </form>
                                             </div>
                                         </div>
+                                        @endpush
                                     @empty
                                         <tr><td colspan="7" class="text-center text-muted">Belum ada item FAQ.</td></tr>
                                     @endforelse

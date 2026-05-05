@@ -27,7 +27,17 @@ class AdminAuthController extends Controller
             'password' => $credentials['password'],
         ], (bool) ($credentials['remember'] ?? false))) {
             $request->session()->regenerate();
-            return redirect()->intended(route('admin.dashboard'));
+            $request->session()->forget('admin_2fa_passed');
+            $request->session()->forget('admin_2fa_pending_secret');
+
+            $user = Auth::user();
+
+            if ($user && !$user->totpDevices()->exists()) {
+                return redirect()->route('admin.2fa.setup')
+                    ->with('success', 'Akun Anda wajib setup Google Authenticator terlebih dahulu.');
+            }
+
+            return redirect()->route('admin.2fa.challenge');
         }
 
         return back()
@@ -73,6 +83,8 @@ class AdminAuthController extends Controller
     {
         Auth::logout();
 
+        $request->session()->forget('admin_2fa_passed');
+        $request->session()->forget('admin_2fa_pending_secret');
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 

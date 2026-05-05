@@ -7,10 +7,8 @@
                         <th style="width: 60px;">#</th>
                         <th>Judul</th>
                         <th>Section</th>
-                        <th>Icon</th>
                         <th>Gambar</th>
-                        <th>Delay</th>
-                        <th>Sort</th>
+                        <th>Urutan</th>
                         <th>Status</th>
                         <th style="width: 150px;">Aksi</th>
                     </tr>
@@ -29,19 +27,12 @@
                             <td>{{ optional($t->section)->title }} <small
                                     class="text-muted">({{ optional($t->section)->slug }})</small></td>
                             <td>
-                                @if($t->icon_class)
-                                    <span class="{{ $t->icon_class }}"></span>
-                                    <small class="d-block text-muted">{{ $t->icon_class }}</small>
-                                @endif
-                            </td>
-                            <td>
                                 @if($t->image_path)
                                     <img src="{{ asset($t->image_path) }}" alt="" style="height:40px;">
                                 @else
                                     <span class="text-muted">-</span>
                                 @endif
                             </td>
-                            <td>{{ $t->animation_delay_ms }}ms</td>
                             <td>{{ $t->sort_order }}</td>
                             <td>
                                 @if($t->is_active)
@@ -62,7 +53,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="9" class="text-center text-muted">Belum ada data.</td>
+                            <td colspan="7" class="text-center text-muted">Belum ada data.</td>
                         </tr>
                     @endforelse
                 </tbody>

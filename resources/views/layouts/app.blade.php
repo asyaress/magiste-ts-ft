@@ -121,6 +121,9 @@
             @yield('content')
         </main>
 
+        {{-- ===== Popup Pengumuman Pendaftaran ===== --}}
+        @include('partials.modals.admission-announcement')
+
         {{-- ===== Footer ===== --}}
         @include('partials.footer.footer')
         @include('partials.footer.footer-bottom')

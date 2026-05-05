@@ -84,17 +84,6 @@
                                     placeholder="Laboratorium / Studio / ..." value="{{ old('category_label') }}">
                             </div>
 
-                            <div class="form-group">
-                                <label>Icon Class</label>
-                                <input type="text" name="icon_class" class="form-control" placeholder="flaticon-architect"
-                                    value="{{ old('icon_class') }}">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Icon Color Class</label>
-                                <input type="text" name="icon_color_class" class="form-control" placeholder="clr1"
-                                    value="{{ old('icon_color_class') }}">
-                            </div>
                         </div>
 
                         {{-- Kanan --}}
@@ -121,14 +110,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Grid Classes</label>
-                                <input type="text" name="col_classes" class="form-control"
-                                    value="{{ old('col_classes', 'col-xl-4 col-lg-6 col-md-6') }}">
-                                <small class="text-muted">Contoh: <code>col-xl-4 col-lg-6 col-md-6</code></small>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Sort Order</label>
+                                <label>Urutan Tampil</label>
                                 <input type="number" name="sort_order" class="form-control"
                                     value="{{ old('sort_order', 0) }}" min="0" required>
                             </div>

@@ -103,17 +103,10 @@
                                 <input type="text" name="image_alt" class="form-control" value="{{ old('image_alt') }}">
                             </div>
 
-                            <div class="form-row">
-                                <div class="form-group col-md-7">
-                                    <label>Overlay Icon Class</label>
-                                    <input type="text" name="overlay_icon_class" class="form-control"
-                                        value="{{ old('overlay_icon_class', 'flaticon-plus') }}">
-                                </div>
-                                <div class="form-group col-md-5">
-                                    <label>Author</label>
-                                    <input type="text" name="author_name" class="form-control"
-                                        value="{{ old('author_name') }}">
-                                </div>
+                            <div class="form-group">
+                                <label>Author</label>
+                                <input type="text" name="author_name" class="form-control"
+                                    value="{{ old('author_name') }}">
                             </div>
 
                             <div class="form-row">
@@ -130,17 +123,10 @@
                                 </div>
                             </div>
 
-                            <div class="form-row">
-                                <div class="form-group col-md-7">
-                                    <label>Anim Duration (ms)</label>
-                                    <input type="number" name="animation_duration_ms" class="form-control" min="0"
-                                        value="{{ old('animation_duration_ms', 1500) }}">
-                                </div>
-                                <div class="form-group col-md-5">
-                                    <label>Sort Order</label>
-                                    <input type="number" name="sort_order" class="form-control" min="0"
-                                        value="{{ old('sort_order', 0) }}">
-                                </div>
+                            <div class="form-group">
+                                <label>Urutan Tampil</label>
+                                <input type="number" name="sort_order" class="form-control" min="0"
+                                    value="{{ old('sort_order', 0) }}">
                             </div>
 
                             <div class="form-group">

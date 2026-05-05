@@ -15,8 +15,7 @@
                         <th>Publish</th>
                         <th>Komentar</th>
                         <th>Author</th>
-                        <th>Anim</th>
-                        <th>Sort</th>
+                        <th>Urutan</th>
                         <th style="width:160px;">Aksi</th>
                     </tr>
                 </thead>
@@ -52,7 +51,6 @@
                             </td>
                             <td>{{ $p->comment_count }}</td>
                             <td>{{ $p->author_name ?: '-' }}</td>
-                            <td><small>{{ $p->animation_duration_ms }}ms</small></td>
                             <td>{{ $p->sort_order }}</td>
                             <td>
                                 <a href="{{ route('admin.blog-posts.edit', $p) }}" class="btn btn-sm btn-warning">Edit</a>
@@ -65,7 +63,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="10" class="text-center text-muted">Belum ada post.</td>
+                            <td colspan="9" class="text-center text-muted">Belum ada post.</td>
                         </tr>
                     @endforelse
                 </tbody>

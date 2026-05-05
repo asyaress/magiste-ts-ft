@@ -1,4 +1,4 @@
-@extends('layout/main')
+﻿@extends('layout/main')
 
 @section('content')
     <div class="content-wrapper">
@@ -78,6 +78,7 @@
                                             </td>
                                         </tr>
 
+                                        @push('modals')
                                         <div class="modal fade" id="modalEditSection{{ $sec->id }}" tabindex="-1" role="dialog"
                                             aria-hidden="true">
                                             <div class="modal-dialog" role="document">
@@ -111,7 +112,7 @@
                                                         </div>
                                                         <div class="form-row">
                                                             <div class="form-group col-md-6">
-                                                                <label>Sort Order</label>
+                                                                <label>Urutan Tampil</label>
                                                                 <input type="number" name="sort_order" class="form-control" min="0"
                                                                     value="{{ $sec->sort_order }}">
                                                             </div>
@@ -131,6 +132,7 @@
                                                 </form>
                                             </div>
                                         </div>
+                                        @endpush
                                     @empty
                                         <tr>
                                             <td colspan="7" class="text-center text-muted">Belum ada section galeri.</td>
@@ -161,7 +163,7 @@
                     <div class="form-group"><label>Button Text</label><input type="text" name="button_text" class="form-control"></div>
                     <div class="form-group"><label>Button URL</label><input type="url" name="button_url" class="form-control"></div>
                     <div class="form-row">
-                        <div class="form-group col-md-6"><label>Sort Order</label><input type="number" name="sort_order" class="form-control" min="0" value="0"></div>
+                        <div class="form-group col-md-6"><label>Urutan Tampil</label><input type="number" name="sort_order" class="form-control" min="0" value="0"></div>
                         <div class="form-group col-md-6">
                             <label>Status</label>
                             <select name="is_active" class="form-control" required>
@@ -188,3 +190,4 @@
         @endif
     </script>
 @endpush
+

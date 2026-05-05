@@ -77,6 +77,7 @@
                                             </td>
                                         </tr>
 
+                                        @push('modals')
                                         <div class="modal fade" id="modalEdit{{ $slide->id }}" tabindex="-1" role="dialog" aria-hidden="true">
                                             <div class="modal-dialog modal-lg" role="document">
                                                 <form action="{{ route('admin.home-hero-slides.update', $slide) }}" method="POST" enctype="multipart/form-data" class="modal-content">
@@ -95,6 +96,7 @@
                                                 </form>
                                             </div>
                                         </div>
+                                        @endpush
                                     @empty
                                         <tr><td colspan="6" class="text-center text-muted">Belum ada slide hero.</td></tr>
                                     @endforelse

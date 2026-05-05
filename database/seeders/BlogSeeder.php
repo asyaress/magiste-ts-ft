@@ -15,9 +15,9 @@ class BlogSeeder extends Seeder
         $section = BlogSection::updateOrCreate(
             ['slug' => 'blog-latest'],
             [
-                'subtitle' => 'The standard chunk of used since the is reproduced below for those.',
-                'title' => 'Letest News',
-                'button_text' => 'View All Blog',
+                'subtitle' => 'Informasi terbaru seputar kegiatan akademik, riset, dan prestasi Magister Teknik Sipil FT Unmul.',
+                'title' => 'Berita Terbaru',
+                'button_text' => 'Lihat Semua Berita',
                 'button_url' => url('/blog'),
                 'is_active' => true,
                 'sort_order' => 0,
